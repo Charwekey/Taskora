@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+    --bg-main: #7FA5A4;
+    /* Main teal from the background */
+    --bg-secondary: rgba(255, 255, 255, 0.45);
+
+    --glass-bg: rgba(255, 255, 255, 0.35);
+    --glass-blur: blur(18px);
+    --glass-shadow: 0 10px 30px rgba(79, 118, 117, 0.15);
+
+    --text-primary: #2B3D3E;
+    /* Dark teal for primary text */
+    --text-secondary: #4A6565;
+    /* Medium teal for secondary text */
+
+    --accent-primary: #C9A068;
+    /* Gold/bronze from the shoe pattern */
+    --accent-secondary: #5C8584;
+    /* Deeper teal accent */
+
+    --border-radius-lg: 18px;
+    --border-radius-md: 12px;
+
+    --transition-base: all 0.3s ease;
+}
+
+.dark {
+    --bg-main: #2B4544;
+    /* Darker teal for dark mode */
+    --bg-secondary: rgba(255, 255, 255, 0.08);
+
+    --glass-bg: rgba(43, 69, 68, 0.65);
+    --glass-blur: blur(20px);
+    --glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+
+    --text-primary: #E8F2F1;
+    /* Light teal/mint for text */
+    --text-secondary: #A8C5C4;
+    /* Softer teal for secondary */
+
+    --accent-primary: #D4B078;
+    /* Brighter gold for dark mode */
+    --accent-secondary: #7FA5A4;
+    /* Sage teal */
+}
+
+@layer utilities {
+    .glass {
+        background: var(--glass-bg);
+        backdrop-filter: var(--glass-blur);
+        -webkit-backdrop-filter: var(--glass-blur);
+        box-shadow: var(--glass-shadow);
+        border-radius: var(--border-radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    transition: var(--transition-base);
+    margin: 0;
+    min-height: 100vh;
+}
